@@ -1,0 +1,330 @@
+[모바일 앱 프로그래밍 텀 프로젝트 기획서]
+
+필수 기능 : 입력 값을 받아 처리하는 대화상자, 액티비티(3개 이상)
+
+앱 주제 : 온라인 서점 앱
+화면 디자인 : XD 파일 참조
+구성 
+1. 홈 화면
+- 처음 앱 열면 책들 6 - 9권 정도 나오는 화면
+- 책 선택 후 구매 버튼 누르면 이름 입력 대화 상자 띄우기, 입력전까지 확인 비활성화, 공백 입력 시 토스트 메시지 띄우기
+- 입력 되면 '이름'님이 구매하고자 하는 책은 '이 책'입니다./품절입니다.를 대화 상자로 띄우거나 토스트 메시지 띄우기
+2. 마이페이지
+- 구매 내역이나 회원 등급 보여주는 페이지로 사용
+- 도서 앱 테마 설정하기 버튼 (라디오 버튼으로 구성)
+4. 책 상세 내용 페이지
+- 수량 수정 가능(버튼으로 올리면 텍스트 뷰의 숫자 증가), 최소 수량은 1, 1일 때는 - 버튼 비활성화
+- 이전, 취소, 돌아가기 버튼으로 홈 화면으로 돌아가기 
+
++)
+로고 누르면 홈 화면 띄우기
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FAF3EB">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FAF3EB"
+            android:padding="18dp"
+            android:src="@drawable/category"></ImageButton>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="#FAF3EB"
+            android:src="@drawable/category"
+            android:text="Online BookStore"
+            android:textColor="#707070"
+            android:textSize="18dp"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:background="#F1F1F1"
+            android:padding="10dp"></EditText>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#F1F1F1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book01" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="우리는 페퍼로니에서 왔어"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book02" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="달러구트 꿈 백화점"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book03" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="천 개의 파랑"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book04" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="기억 1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book05" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="기억 2"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book06" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="아몬드"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book07" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="시선으로부터,"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book08" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="피프티 피플"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F1F1F1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book09" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="모순"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </GridLayout>
+
+    </ScrollView>
+</LinearLayout>

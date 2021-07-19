@@ -1,0 +1,219 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FAF3EB">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FAF3EB"
+            android:padding="18dp"
+            android:src="@drawable/category" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="#FAF3EB"
+            android:src="@drawable/category"
+            android:text="Online BookStore"
+            android:textColor="#707070"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:background="#F1F1F1"
+            android:padding="10dp" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#F1F1F1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="220dp"
+                    android:layout_height="240dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/book01" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingRight="25dp"
+                        android:text="우리는 페퍼로니에서 왔어"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingRight="25dp"
+                        android:text="가  격  : 12,600원"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingRight="25dp"
+                        android:text="할인가 : 11,100원"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/minus"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:backgroundTint="#FAF3EB"
+                            android:text="-"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/count"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="1"
+                            android:textAlignment="center"
+                            android:textColor="#999999" />
+
+                        <Button
+                            android:id="@+id/plus"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:backgroundTint="#FAF3EB"
+                            android:text="+"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/purchase"
+                            android:layout_width="65dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:backgroundTint="#DBBC9D"
+                            android:text="구매"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/cancel"
+                            android:layout_width="65dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:backgroundTint="#F1F1F1"
+                            android:text="취소"
+                            android:textColor="#999999"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:text="우리는 페퍼로니에서 왔어"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:text="[당신의 안녕을 묻는 김금희의 소설들] 김금희 소설가가 2019년부터 2021년까지 발표한 작품 일곱 편을 엮은 책. 소설은 사는 동안 우리가 맞닥뜨리는 실패와 상실의 모습을 가감없이 비추며, 그 속에서 끝내 이루고야 말 크고 작은 성장의 순간들 또한 함께 그린다. 나란히 오늘을 걸어가는 이들에게 건네는 안부 같은 이야기 -소설MD 박형욱"></TextView>
+
+            <ImageView
+                android:layout_width="360dp"
+                android:layout_height="500dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/book01intro" />
+
+            <Button
+                android:id="@+id/review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:backgroundTint="#F1F1F1"
+                android:text="책 후기 작성하기"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
